@@ -26,7 +26,7 @@ export default async function Image() {
           overflow: "hidden",
         }}
       >
-        {/* Background gradient with Farcaster purple and electric blue */}
+        {/* Background gradient with NFT marketplace theme */}
         <div
           style={{
             position: "absolute",
@@ -34,12 +34,12 @@ export default async function Image() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: "linear-gradient(135deg, #8A63D2 0%, #1E90FF 100%)",
-            opacity: 0.9,
+            background: "linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%)",
+            opacity: 0.95,
           }}
         />
 
-        {/* Subtle pattern overlay for depth */}
+        {/* Grid pattern overlay for NFT aesthetic */}
         <div
           style={{
             position: "absolute",
@@ -47,8 +47,12 @@ export default async function Image() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage:
-              "radial-gradient(circle at 20% 80%, rgba(138, 99, 210, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(30, 144, 255, 0.4) 0%, transparent 50%)",
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+            opacity: 0.3,
           }}
         />
 
@@ -145,7 +149,7 @@ export default async function Image() {
               fontWeight: "600",
               color: "rgba(255, 255, 255, 0.95)",
               textAlign: "center",
-              marginBottom: "56px",
+              marginBottom: "40px",
               lineHeight: 1.3,
               textShadow: "0 3px 12px rgba(0, 0, 0, 0.4)",
               maxWidth: "800px",
@@ -154,6 +158,40 @@ export default async function Image() {
           >
             {PROJECT_DESCRIPTION}
           </p>
+
+          {/* NFT showcase preview boxes */}
+          <div
+            style={{
+              display: "flex",
+              gap: "24px",
+              marginBottom: "40px",
+              opacity: 0.9,
+            }}
+          >
+            {/* Sample NFT cards */}
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "16px",
+                  background: `linear-gradient(45deg, rgba(255,255,255,0.${2 + i}), rgba(255,255,255,0.${1 + i}))`,
+                  border: "2px solid rgba(255,255,255,0.4)",
+                  backdropFilter: "blur(10px)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "28px",
+                  fontWeight: "bold",
+                  color: "rgba(255,255,255,0.8)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+                }}
+              >
+                {i}
+              </div>
+            ))}
+          </div>
 
           {/* Farcaster branding element */}
           <div
